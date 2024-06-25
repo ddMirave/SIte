@@ -1,0 +1,47 @@
+<div class="main">
+  <div class="win">
+    <div class="win-title">
+      <h1>Выполнение задания</h1>
+      <button (click)="showContent()">?</button>
+    </div>
+    <div class="exercise">
+      <div *ngFor="let exercise of exercises; let i = index">
+        <div>
+          <div class="number">
+            <h4>Задание {{i + 1}}</h4>
+          </div>
+          <ul>
+            <li class="answer" *ngFor="let answer of exercise.answers">
+              <input type="radio" [value]="answer.content" [checked]="exercise.userAnswer === answer.content"
+                (change)="exercise.userAnswer = answer.content" />
+              <label>{{ answer.content }}</label> <!-- Привязка label к input -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="btn-block">
+      <button class="btn" (click)="checkAnswersAndUpdateState()"><span>Аделам</span></button>
+      <button class="btn" routerLink="../Home"><span>Меке</span></button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <div class="show-title">
+      <h2>Упражнение выполнено!</h2>
+  </div>
+  <p>Ваш результат: {{ result }}</p>
+  <button class="close-modal-btn" (click)="showModal = false" routerLink="../Home">В меню</button>
+</div>
+</div>
+
+<div *ngIf="showModalContent" class="modal">
+  <div class="modal-content">
+    <div class="show-title">
+      <h2>В данном задании вам будет необходимо среди однокоренных слов найти лишнее и выбрать его</h2>
+    </div>
+    <button class="close-modalshow-btn" (click)="showModalContent = false">Закрыть</button>
+  </div>
+</div>

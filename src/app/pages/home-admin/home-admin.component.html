@@ -1,0 +1,87 @@
+<div class="main">
+  <div class="win">
+    <div class="win-title">
+      <!-- <h1>Редактирование задания</h1> -->
+      <h1>Выбранная категория: {{ selectedCategory }}</h1>
+    </div>
+    <div class="load-exercise">
+      <div class="exercise" *ngFor="let exercise of exercises; let i = index">
+        <div class="view">
+          <div class="number">
+            <h4>Задание {{i + 1}}</h4>
+          </div>
+          <div class="list">
+            <ul>
+              <li class="answer" *ngFor="let answer of exercise.answers">
+                <label>{{ answer.content }}</label>
+              </li>
+            </ul>
+            <label class="tru-answer">Правильный ответ: {{ exercise.trueAnswer }}</label>
+          </div>
+        </div>
+        <div class="edit">
+
+          <button (click)="onDeleteExercise(exercise.id)">Удалить задание</button>
+          <button (click)="selectExerciseToEdit(exercise.id)">Редактировать</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="new-exec">
+      <form class="green" (submit)="onSubmit()">
+
+        <div *ngFor="let answer of newExercise.answers; let i = index">
+          <label for="answer{{i}}">Вариант ответа {{i + 1}}:</label>
+          <input id="answer{{i}}" [(ngModel)]="newExercise.answers[i].content" name="answer{{i}}" required>
+        </div>
+        <div class="new-btn">
+          <button type="button" (click)="addAnswer()">Добавить вариант ответа</button>
+          <div>
+
+            <label for="trueAnswer">Правильный ответ:</label>
+            <input id="trueAnswer" [(ngModel)]="newExercise.trueAnswer" name="trueAnswer" required>
+          </div>
+          
+          <button type="submit">Создать задание</button>
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+</div>
+
+
+<!-- Модальное окно -->
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <div *ngIf="editingExercise" class="show-title">
+      <h2>Редактирование задания</h2>
+    </div>
+    <!-- Форма редактирования  -->
+    <div class="green" *ngIf="editingExercise">
+      <form (submit)="updateExercise()">
+        <div class="" *ngFor="let answer of editingExercise.answers; let i = index">
+          <label for="edit-answer{{i}}">Ответ {{i + 1}}:</label>
+          <input id="edit-answer{{i}}" [(ngModel)]="editingExercise.answers[i].content" name="edit-answer{{i}}"
+            required>
+
+          <!-- Кнопка удаления текущего ответа -->
+          <button *ngIf="i!== -1" (click)="deleteAnswer(i)">Удалить</button>
+
+
+          <!-- Кнопка добавления нового ответа -->
+          <button *ngIf="i === editingExercise.answers.length - 1" (click)="addeditAnswer(i)">Добавить ответ</button>
+
+        </div>
+
+        <label for="edit-trueAnswer">Правильный ответ:</label>
+        <input id="edit-trueAnswer" [(ngModel)]="editingExercise.trueAnswer" name="edit-trueAnswer" required>
+
+        <button type="submit" (click)="showModal = false">Обновить задание</button>
+      </form>
+    </div>
+    <button class="close-modal-btn" (click)="showModal = false">Закрыть</button>
+  </div>
+</div>

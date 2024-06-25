@@ -1,0 +1,11 @@
+<form [formGroup]="dynamicForm">
+    <div formArrayName="answers">
+      <div *ngFor="let answer of answers.controls; let i = index">
+        <div [formGroupName]="i">
+          <input type="text" formControlName="answer">
+          <button (click)="removeAnswer(i)">Удалить</button>
+        </div>
+      </div>
+    </div>
+    <button (click)="addAnswer()">Добавить ответ</button>
+  </form>

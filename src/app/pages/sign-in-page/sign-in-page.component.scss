@@ -1,0 +1,242 @@
+.main {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background: url(../../../assets/img/background.png);
+    background-size: cover;
+
+
+    .win {
+        margin: auto;
+        padding: 2%;
+        background: rgb(233, 233, 233, 0.2);
+        backdrop-filter: blur(4px);
+        border-radius: 50px;
+        border: 4px solid #8D2F3F;
+
+        .win-title {
+            text-align: center;
+            padding: 0 0 85px 0;
+
+            h1 {
+                font-weight: 400;
+            }
+        }
+
+        .win-block_inpt {
+            width: 100%;
+            height: 223px;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 33px;
+
+
+                .win-block_inpt-list {
+
+                    h3 {
+                        font-weight: 400;
+                        padding: 0 0 17px 0;
+                    }
+
+                    input[type=text],
+                    [type=password] {
+                        width: 100%;
+                        padding: 0px 0;
+                        border: 0px;
+                        background: transparent;
+                    }
+
+                    .win-block_inpt-list-line {
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        height: 1px;
+                        background: #000;
+                    }
+                }
+            }
+        }
+
+        .win-block_link {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            button {
+                border-radius: 5px;
+                border: none;
+                padding: 4px;
+                align-items: center;
+                background: #AC3146;
+                color: #fff;
+                font-size: 24px;
+                width: 90%;
+                border: 3px solid #AC3146;
+                margin: 0 auto;
+            }
+
+            button:hover {
+                background: none;
+                border: 3px solid #AC3146;
+                color: #000;
+            }
+
+
+
+            .link_back {
+                border-radius: 15px 15px 5px 5px;
+            }
+
+            .link_sign_in {
+                border-radius: 5px 5px 15px 15px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px),
+(max-width: 1200px) {
+    .win {
+        width: 500px;
+
+        h1 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        input[type=text],
+        [type=password] {
+            font-size: 16px;
+        }
+
+        .win-block_inpt-recovery {
+            font-size: 18px;
+        }
+
+        .link {
+            height: 50px;
+
+            span {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    //17%
+    .win {
+        width: 425px;
+
+        h1 {
+            font-size: 32px;
+
+        }
+
+        h3 {
+            font-size: 16.5px;
+        }
+
+        input[type=text],
+        [type=password] {
+            font-size: 13.2px;
+        }
+
+        .win-block_inpt-recovery {
+            font-size: 15px;
+        }
+
+        .link {
+            height: 41px;
+
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .win {
+        width: 360px;
+
+        h3 {
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        input[type=text],
+        [type=password] {
+            font-size: 13px;
+        }
+
+        .win-block_inpt-recovery {
+            font-size: 15px;
+        }
+
+        .link {
+            height: 38px;
+
+            span {
+                font-size: 16.5px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 488px) {
+    .win {
+        width: 260px;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        input[type=text],
+        [type=password] {
+            font-size: 12px;
+        }
+
+        .win-block_inpt-recovery {
+            font-size: 14px;
+        }
+
+        .link {
+            height: 38px;
+
+            span {
+                font-size: 16.5px;
+            }
+        }
+    }
+
+}
+
+.error-message {
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    div {
+        color: red;
+        font-size: 16px;
+    }
+}

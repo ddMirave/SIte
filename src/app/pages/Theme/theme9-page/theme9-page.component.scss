@@ -1,0 +1,271 @@
+.main {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background: url(../../../../assets/img/background.png);
+    background-size: cover;
+
+    .win {
+        margin: auto;
+        padding: 2%;
+        background: rgb(233, 233, 233, 0.2);
+        backdrop-filter: blur(4px);
+        border-radius: 50px;
+        border: 4px solid #8D2F3F;
+        max-height: 600px;
+        overflow-y: auto;
+        -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+        scrollbar-width: none;/* Для Firefox */
+
+        .win::-webkit-scrollbar {
+            display: none; /* Для Chrome, Safari и Opera */
+          }
+
+        .win-title {
+            text-align: center;
+
+            h1 {
+                font-weight: 400;
+            }
+        }
+
+        .exercise {
+            margin: 30px auto;
+
+            .number {
+                border-bottom: 2px solid #8D2F3F;
+            }
+
+            ul {
+                display: flex;
+
+                .answer {
+                    height: 35px;
+                    padding: 5px;
+                    border: #AC3146;
+                    position: relative;
+                    cursor: pointer;
+                    vertical-align: middle; // Выравнивание текста по вертикали
+                    margin-bottom: 10px;
+                }
+
+                .answer [type="radio"] {
+                    appearance: none; // Сброс стандартного вида радиокнопки
+                    -webkit-appearance: none; // Для старых версий браузеров
+                    width: 20px; // Задайте ширину радиокнопки
+                    height: 20px; // Задайте высоту радиокнопки
+                    border-radius: 50%; // Делает радиокнопку круглой
+                    border: 2px solid #AC3146; // Цвет рамки радиокнопки
+                    outline: none; // Убирает фокусировку по умолчанию
+                    transition: background-color 0.3s ease; // Анимация изменения цвета фона при выборе
+                    vertical-align: middle; // Выравнивание текста по вертикали
+
+                }
+
+
+                .answer [type="radio"]:checked {
+                    background-color: #AC3146; // Цвет фона при выборе
+
+                }
+
+                .answer label {
+                    margin-left: 5px; // Отступ для текста рядом с радиокнопкой
+                    vertical-align: middle; // Выравнивание текста по вертикали
+                }
+            }
+
+        }
+
+        .btn-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            button {
+                border-radius: 10px;
+                border: none;
+                padding: 8px;
+                align-items: center;
+                background: #AC3146;
+                color: #fff;
+                font-size: 16px;
+                width: 40%;
+                border: 3px solid #AC3146;
+            }
+
+            button:hover {
+                background: none;
+                border: 3px solid #AC3146;
+                color: #000;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px),
+(max-width: 1200px) {
+    .win {
+        width: 800px;
+
+        h1 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+
+
+        .win-block_inpt-recovery {
+            font-size: 18px;
+        }
+
+        .link {
+            height: 50px;
+
+            span {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    //17%
+    .win {
+        width: 425px;
+
+        h1 {
+            font-size: 32px;
+
+        }
+
+        h3 {
+            font-size: 16.5px;
+        }
+
+        .win-block_inpt-recovery {
+            font-size: 15px;
+        }
+
+        .link {
+            height: 41px;
+
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .modal-content {
+        background-color: #fefefe;
+        border-radius: 20px;
+        border: 4px solid #8D2F3F;
+        margin: 15% auto;
+        padding: 20px;
+        width: 50%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+            margin: auto 0;
+            font-size: 24px;
+        }
+
+        button {
+            border-radius: 10px;
+            border: none;
+            padding: 8px;
+            align-items: center;
+            background: #AC3146;
+            color: #fff;
+            font-size: 16px;
+            width: 40%;
+            border: 3px solid #AC3146;
+        }
+
+        button:hover {
+            background: none;
+            border: 3px solid #AC3146;
+            color: #000;
+        }
+
+    }
+}
+
+@media (max-width: 768px) {
+    .win {
+        width: 360px;
+
+        h3 {
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+
+        .win-block_inpt-recovery {
+            font-size: 15px;
+        }
+
+        .link {
+            height: 38px;
+
+            span {
+                font-size: 16.5px;
+            }
+        }
+    }
+
+}
+
+
+@media (max-width: 488px) {
+    .win {
+        width: 260px;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+
+        .win-block_inpt-recovery {
+            font-size: 14px;
+        }
+
+        .link {
+            height: 38px;
+
+            span {
+                font-size: 16.5px;
+            }
+        }
+    }
+
+}

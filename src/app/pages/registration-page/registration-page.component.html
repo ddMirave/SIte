@@ -1,0 +1,41 @@
+<div class="main">
+    <div class="win">
+        <div class="win-title">
+            <h1>Регистрация</h1>
+        </div>
+        <form #registerForm="ngForm" novalidate class="win-block-inpt">
+            <div class="win-block-inpt-list">
+                <ul>
+                    <li>
+                        <h3>Логинце</h3>
+                            <input class="win-block_inpt-list-inpt_field" type="text" [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" placeholder="Тяштьк логинцень">
+                        <div class="lwin-block-inpt-list-line"></div>
+                    </li>
+                    <li>
+                        <h3>Почтаце</h3>
+                            <input class="win-block_inpt-list-inpt_field" type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder="Тяштьк почтацень">
+                        <div class="lwin-block-inpt-list-line"></div>
+                    </li>
+                    <li>
+                        <h3>Парольце</h3>
+                            <input class="win-block_inpt-list-inpt_field" type="text" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" placeholder="Тяштьк парольцень">
+                        <div class="lwin-block-inpt-list-line"></div>
+                    </li>
+                    <li>
+                        <h3>Та весть парольцень</h3>
+                            <input class="win-block_inpt-list-inpt_field" type="text" placeholder="тяштьк парольцень">
+                        <div class="lwin-block-inpt-list-line"></div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+        <div class="error-message">
+            <div *ngIf="errorMessage" >{{ errorMessage }}</div>
+        </div>
+        <div class="win-block_link">
+            <button class="link link-reg" (click)="postRegister()">Тиемс регистрация</button>
+            <button class="link link-sign" routerLink="../">Мрдамс</button>
+        </div>
+    </div>
+</div>
+

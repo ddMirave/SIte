@@ -1,0 +1,30 @@
+<div class="main">
+    <div class="win">
+        <div class="win-title">
+            <h1>Сувама васта</h1>
+        </div>
+        <form #loginForm="ngForm" novalidate class="win-block_inpt">
+            <ul>
+                <li class="win-block_inpt-list">
+                    <h3>Логинце</h3>
+                    <input class="win-block_inpt-list-input" type="text"  [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" placeholder="Тяштьк логинцень" (keydown.enter)="onEnter()">
+                    <div class="win-block_inpt-list-line"></div>
+                </li>
+                <li class="win-block_inpt-list">
+                    <h3>Парольце</h3>
+                    <input class="win-block_inpt-list-input" type="text" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" placeholder="Тяштьк парольцень" (keydown.enter)="onEnter()">
+                    <div class="win-block_inpt-list-line"></div>
+                </li>
+            </ul>
+        </form>
+        <div class="error-message">
+            <div *ngIf="errorMessage" >{{ errorMessage }}</div>
+        </div>
+        <div class="win-block_link">
+            <button class="link link_back" (click)="postLogin()">Сувамс</button>
+            <button class="link link_sign_in" routerLink="/registration">Регистрация</button>
+        </div>
+    </div>
+</div>
+
+<!-- Добавьте этот блок в конец вашего формы -->
